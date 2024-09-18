@@ -1,10 +1,80 @@
-# Project Overview
+# GemUnite
 
+GemUnite is a web application designed for IT enthusiasts to collaborate on projects within their areas of interest. Users can search for or create small to medium-sized groups and work together on projects like machine learning, web development, cybersecurity, IoT, and more.
 
-GemUnite is an application that allows IT enthusiasts to search for or create small to medium-sized groups to work on projects within their areas of interest.
+## Features
 
-Upon creating an account, the user, in addition to personal information, enters their areas of interest, such as machine learning, web development, cybersecurity, IoT, etc. On the homepage, the user will see some project proposals in their areas of interest. For each proposal, they can view the current members, get information about the project's creator, and access details about the proposed project, with the option to send a request to join the group.
+- **User Registration:** Users sign up with their personal information and select their areas of interest.
+- **Project Proposals:** Users can view project proposals in their areas of interest on the homepage, see group members, and request to join.
+- **Project Creation:** Registered users can create a project, set group size, and provide a description of the project idea.
+- **Project Management:** Members can track project progress through checkpoints, manage tasks, and communicate via a built-in chat. Github repositories can be linked via the Github API.
+- **Member Management:** Project creators can accept/reject requests, remove members, and edit project information.
 
-A registered user can create a project proposal by providing information about the field, a description of the project idea, and the group's size. Once published, they can accept or reject participation requests.
+## Tech Stack
 
-In the projects section, users can view the projects they are participating in, along with relevant information. By accessing each project's page, a member can track progress through checkpoints set by the leader, add internal tasks to a checkpoint, and mark tasks as completed. A user can also edit project information and remove members from groups they've created. Project members can use a chat and access the project's repository created through the Github API.
+- **Ruby on Rails:** Web framework
+- **SQLite:** Database
+- **Github API:** To manage repositories for projects
+- **ActionCable:** Real-time chat functionality
+
+## Getting Started
+
+### Prerequisites
+
+Ensure that you have the following installed:
+
+- [Ruby](https://www.ruby-lang.org/en/) (version 3.0.0 or above)
+- [Ruby on Rails](https://rubyonrails.org/) (version 6.1 or above)
+
+### Installation
+
+1. Clone the repository:
+
+    ```bash
+    git clone https://github.com/yourusername/gemunite.git
+    cd gemunite
+    ```
+
+2. Install dependencies:
+
+    ```bash
+    bundle install
+    yarn install
+    ```
+
+3. Set up the database:
+
+    ```bash
+    rails db:create
+    rails db:migrate
+    ```
+
+4. Set up environment variables:
+
+    You'll need to configure a `.env` file with your Github API credentials and any other necessary environment variables:
+
+    ```bash
+    GITHUB_CLIENT_ID=your_github_client_id
+    GITHUB_CLIENT_SECRET=your_github_client_secret
+    ```
+
+5. Run the server:
+
+    ```bash
+    rails server
+    ```
+
+6. Navigate to `http://localhost:3000` in your browser.
+
+### Running Tests
+
+Run the following command to execute tests:
+
+```bash
+rails test
+```
+
+### API Integration
+
+GemUnite uses the [Github API](https://docs.github.com/en/rest) to manage project repositories. Make sure you have a valid Github API token for repository creation and linking.
+
